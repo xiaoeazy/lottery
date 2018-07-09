@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS初始化 */
+*{font-family:微软雅黑; color:#666666}
+html, body {  margin: 0; padding: 0; width:100%;}
+body { padding: 0; margin: 0; }
+a { color: #222; text-decoration: none; }
+ul, li, h1, h2, h3, h4, h5, h6, dl, dt, dd, form, input, hr, img, div, label, span, p{ margin: 0; padding: 0; }
+input { font-size: 12px; }
+ul, li { list-style: none outside none; }
+img { border: 0 none; }
+input { font-family: Arial, Helvetica, sans-serif; }
+a{color:#FFF;text-decoration:none}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+/*bg*/
+body{
+	background-image:url(../images/bg.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.ly-plate{
+	width:560px;
+	height:560px;
+	margin: 50px auto;
+}
+.rotate-bg{
+	width:560px;
+	height:560px;
+	background:url(../images/rotate-bg.png);
+	position:relative;
+	margin-top:200px
+}
+.ly-plate div.lottery-star{
+	width:240px;
+	height:240px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left: -120px;
+	margin-top: -135px;
+	outline:none;
+}
+
+
+.h_text ul{
+	font-size:28px;
+	color:#d7531c;
+	margin-left:46px;
+	margin-bottom:10px;
+	}
+.h_text p{
+	font-size:30px;
+	font-weight:bold;
+	color:#d7531c;
+	margin-bottom:14px;
+	margin-top:95px;
+	}	
+.h_text li{
+	font-size:18px;
+	color:#cf490a;
+	margin-left:26px;
+	margin-right:50px;
+	line-height:30px;
+	}
+
+.prompt{
+	position: fixed;
+	display: none;
+	top:0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
+.winning{
+	display: none;
+	width: 388px;
+	height: 510px;
+	position: relative;
+	top:50%;
+	left:50%;
+	margin-top: -255px;
+	margin-left:-194px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 0px 0px 10px #ffffff;
+	background-color: #ffffff;
+}
+.close{
+	position: absolute;
+	top:10px;
+	right: 10px;
+	width: 26px;
+	height: 26px;
+	background: url(../images/close.png) no-repeat center;
+}
+.winning dt,.reminderwin dt{
+	width: 100%;
+	height:300px;
+	background: url(../images/happy.png) no-repeat center;
+}
+.winning dd, .reminderwin dd{
+	width: 100%;
+	height: 50px;
+	font-size: 30px;
+	line-height: 28px;
+	text-align: center;
+}
+.winning dd span{
+ 	color:#e05c29;
+}
+.receive{
+	display:block;
+	width:256px;
+	height:80px;
+	font-size: 32px;
+	line-height: 80px;
+	text-align: center;
+	text-shadow:0px 0px 2px #666666;
+	margin:30px auto 0px;
+	background-color: #da5623;
+	 background: -webkit-linear-gradient(#eb6634, #bf3c09); /* Safari 5.1 -
+                     6.0 */ background: -o-linear-gradient(#eb6634, #bf3c09); /* Opera 11.1
+                     - 12.0 */ background: -moz-linear-gradient(#eb6634, #bf3c09); /* Firefox
+                   3.6 - 15 */ background: linear-gradient(#eb6634, #bf3c09); /* 标准的语法 */
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+.loser{
+	display: none;
+	width: 388px;
+	height: 420px;
+	position: relative;
+	top:50%;
+	left:50%;
+	margin-top: -210px;
+	margin-left: -194px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 0px 0px 10px #ffffff;
+	background-color: #ffffff;
+}
+
+.loser dt,.reminder dt{
+	width: 100%;
+	height:230px;
+	background: url(../images/cry.png) no-repeat center;
+}
+.loser dd,.reminder dd{
+	width: 100%;
+	height: 60px;
+	font-size: 30px;
+	line-height: 60px;
+	text-align: center;
+	margin-bottom:10px;
+}
+.loser .share,.reminder .share{
+	display: block;
+	font-size: 22px;
+	color: #bd3b0c;
+	text-align: center;
+}
+.reminder,.reminderwin{
+	display: none;
+	width: 388px;
+	height: 420px;
+	position: relative;
+	top:50%;
+	left:50%;
+	margin-top: -210px;
+	margin-left: -194px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 0px 0px 10px #ffffff;
+	background-color: #ffffff;
+}
