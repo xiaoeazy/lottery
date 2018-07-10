@@ -7,7 +7,6 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -194,15 +193,7 @@ public class UserServiceImpl implements UserService {
 	        Double userSelect = randomTool.nextDouble()*100;
 	        return userSelect;
 	}
-	@Test
-	public void main() {
-		for(int i=0;i<10000;i++) {
-			double a = randomNum();
-			if(a<1)
-				System.out.println(a);
-		}
-	}
-	
+
 	
 	
 
