@@ -44,7 +44,7 @@ public class XiaoFeiThread implements Runnable {
 		
 	}
 	
-	 public   Map<String, String>  login(LtUser ltuser) throws IOException, InterruptedException {
+	 public  static Map<String, String>  login(LtUser ltuser) throws IOException, InterruptedException {
 		 	
 	        String urlLogin = "http://localhost:8080/lottery/user/login";
 	        Connection connect = Jsoup.connect(urlLogin);
@@ -76,7 +76,7 @@ public class XiaoFeiThread implements Runnable {
 	        return cookies;
 	    }
 	    
-	    public void afterLogin( Map<String, String> cookies) throws IOException {
+	    public static void afterLogin( Map<String, String> cookies) throws IOException {
 	    	   String url = "http://localhost:8080/lottery/user/choujiang";
 	           // 直接获取DOM树，带着cookies去获取
 	           Document document = Jsoup.connect(url).cookies(cookies).post();
