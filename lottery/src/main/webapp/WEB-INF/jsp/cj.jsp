@@ -137,17 +137,25 @@ $(function(){
 		});
 		function afterAjax(data) {
 			if (data == 1) {
-				rotateFunc(1, 157, '获得一等奖');
-			} else if (data == 2) {
-				rotateFunc(2, 247, '获得二等奖');
+				rotateFunc(1, 112, '获得特等奖');
+			}if (data == 2) {
+				rotateFunc(2, 157, '获得一等奖');
 			} else if (data == 3) {
-				rotateFunc(3, 22, '获得三等奖');
-			} else if (data != 0) {
-				var angle = [ 67, 112, 202, 292, 337 ];
+				rotateFunc(3, 247, '获得二等奖');
+			} else if (data == 4) {
+				rotateFunc(4, 22, '获得三等奖');
+			} else if (data == 5) {
+				var angle = [ 67, 202, 292, 337 ];
 				angle = angle[Math.floor(Math.random() * angle.length)]
-				rotateFunc(0, angle, '恭喜你！获得代金卷');
-				firwin = true;
-			} else {
+				rotateFunc(5, angle, '获得纪念奖');
+			}
+// 			else if (data != 0) {
+// 				var angle = [ 67, 112, 202, 292, 337 ];
+// 				angle = angle[Math.floor(Math.random() * angle.length)]
+// 				rotateFunc(0, angle, '恭喜你！获得代金卷');
+// 				firwin = true;
+// 			} 
+			else {
 				var angle = [ 112, 292 ];//扩大基数量 使得都是0参数，因此已112度和292度为两个角度的奖励最低
 				angle = angle[Math.floor(Math.random() * angle.length)]
 				rotateFunc(4, angle, '很遗憾这次您未抽中奖');

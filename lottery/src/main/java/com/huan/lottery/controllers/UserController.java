@@ -85,8 +85,9 @@ public class UserController extends BaseController{
 			Integer userid =(Integer)request.getSession().getAttribute(BaseController.FIELD_USER_ID) ;
 			String salesPersonId =(String)request.getSession().getAttribute(BaseController.SALES_PERSON_ID) ;
 			String phone =(String)request.getSession().getAttribute(BaseController.PHONE) ;
-			TaotaoResult tr = userService.choujiang(userid, salesPersonId, phone);
-//			TaotaoResult tr = userService.choujiangTest(userid);
+//			TaotaoResult tr = userService.choujiang(userid, salesPersonId, phone);
+			TaotaoResult tr = userService.choujiangTest(userid);
+			tr.setData("5");
 			return tr;
 		} catch (Exception e) {
 			return TaotaoResult.build(500, e.getMessage());
