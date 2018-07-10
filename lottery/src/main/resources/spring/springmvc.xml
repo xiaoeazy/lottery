@@ -24,9 +24,9 @@
 	
 	<mvc:interceptors>
 	    <mvc:interceptor>
-	        <mvc:mapping path="/index/**"/>
- 	         <!-- <mvc:exclude-mapping path="/index/loginPage"/>  不拦截登录请求 -->
-	        <bean class="com.huan.lottery.interceptor.SessionInterceptor"></bean>
+	         <mvc:mapping path="/user/**"/>
+  	         <mvc:exclude-mapping path="/user/login"/>  <!--不拦截登录请求 -->
+	         <bean class="com.huan.lottery.interceptor.SessionInterceptor"></bean>
 	    </mvc:interceptor>
 	</mvc:interceptors>
 	

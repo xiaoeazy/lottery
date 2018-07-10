@@ -3,5 +3,7 @@ encoding//src/main/java=UTF-8
 encoding//src/main/java/com/huan/lottery/controllers/IndexController.java=UTF-8
 encoding//src/main/java/com/huan/lottery/system/controllers/CommonController.java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/webapp/WEB-INF/css/jgg/swiper.min.css=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/jgg.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8

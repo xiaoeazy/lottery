@@ -9,13 +9,15 @@ public class LtUser {
 
     private String idcard;
 
+    private String salespersonid;
+
     private String phone;
 
     private Boolean flag;
 
     private Integer pid;
 
-    private Date pricetime;
+    private Date awarddate;
 
     public Integer getId() {
         return id;
@@ -39,6 +41,14 @@ public class LtUser {
 
     public void setIdcard(String idcard) {
         this.idcard = idcard == null ? null : idcard.trim();
+    }
+
+    public String getSalespersonid() {
+        return salespersonid;
+    }
+
+    public void setSalespersonid(String salespersonid) {
+        this.salespersonid = salespersonid == null ? null : salespersonid.trim();
     }
 
     public String getPhone() {
@@ -65,11 +75,11 @@ public class LtUser {
         this.pid = pid;
     }
 
-    public Date getPricetime() {
-        return pricetime;
+    public Date getAwarddate() {
+        return awarddate;
     }
 
-    public void setPricetime(Date pricetime) {
-        this.pricetime = pricetime;
+    public void setAwarddate(Date awarddate) {
+        this.awarddate = awarddate;
     }
 }

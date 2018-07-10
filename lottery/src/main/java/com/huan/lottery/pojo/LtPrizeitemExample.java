@@ -354,6 +354,66 @@ public class LtPrizeitemExample {
             return (Criteria) this;
         }
 
+        public Criteria andProbabilityIsNull() {
+            addCriterion("probability is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityIsNotNull() {
+            addCriterion("probability is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityEqualTo(Integer value) {
+            addCriterion("probability =", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityNotEqualTo(Integer value) {
+            addCriterion("probability <>", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityGreaterThan(Integer value) {
+            addCriterion("probability >", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityGreaterThanOrEqualTo(Integer value) {
+            addCriterion("probability >=", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityLessThan(Integer value) {
+            addCriterion("probability <", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityLessThanOrEqualTo(Integer value) {
+            addCriterion("probability <=", value, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityIn(List<Integer> values) {
+            addCriterion("probability in", values, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityNotIn(List<Integer> values) {
+            addCriterion("probability not in", values, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityBetween(Integer value1, Integer value2) {
+            addCriterion("probability between", value1, value2, "probability");
+            return (Criteria) this;
+        }
+
+        public Criteria andProbabilityNotBetween(Integer value1, Integer value2) {
+            addCriterion("probability not between", value1, value2, "probability");
+            return (Criteria) this;
+        }
+
         public Criteria andAidIsNull() {
             addCriterion("aid is null");
             return (Criteria) this;

@@ -4,23 +4,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dzp/index.css">
 <title>抽奖活动</title>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script>
+	function tijiao(){
+		var username = $("#username").val();
+		if(username==""){
+			alert("用户名不能为空");
+			return ;
+		}
+		var idcard =$("idcard").val();
+		if(idcard==""){
+			alert("idcard不能为空");
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+
+</script>
 </head>
 <body>
 <div class="b_box">
-   <div class="bg"><img src="images/i_banner.png" width="100%"></div>
+   <div class="bg"><img src="${pageContext.request.contextPath}/images/dzp/i_banner.png" width="100%"></div>
    <div class="text_box">
-       	<div class="name_div">
-       		<input type="text" value="" class="name" placeholder="请输入手机号">
-       		<div></div>
-       	</div>
-       	<div class="name_div">
-       		<input type="text" value="" class="phone" placeholder="请输入地址">
-       		<div></div>
-       	</div>
-        <a href="cj.html" class="cj">我要抽奖</a>
+   		<form action="${pageContext.request.contextPath}/user/login" id="form" method="post">
+	   		<div class="name_div">
+	       		<input type="text" value="1" name="username" class="username" placeholder="请输入用户名">
+	       		<div></div>
+	       	</div>
+	       	<div class="name_div">
+	       		<input type="text" value="1" name="idcard" class="idcard" placeholder="请输入idcard">
+	       		<div></div>
+	       	</div>
+	        <a href="javascript:void(0)"  onclick='tijiao()'  class="cj">我要抽奖</a>
+   		</form>
+       	
    </div>
 </div>
 <script type="text/javascript">

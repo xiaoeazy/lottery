@@ -4,6 +4,8 @@
   <resultMap id="BaseResultMap" type="com.huan.lottery.pojo.LtActivity" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="activityName" property="activityname" jdbcType="VARCHAR" />
+    <result column="startDate" property="startdate" jdbcType="TIMESTAMP" />
+    <result column="endDate" property="enddate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -64,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, activityName
+    id, activityName, startDate, endDate
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.huan.lottery.pojo.LtActivityExample" >
     select
@@ -97,8 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.huan.lottery.pojo.LtActivity" >
-    insert into lt_activity (id, activityName)
-    values (#{id,jdbcType=INTEGER}, #{activityname,jdbcType=VARCHAR})
+    insert into lt_activity (id, activityName, startDate, 
+      endDate)
+    values (#{id,jdbcType=INTEGER}, #{activityname,jdbcType=VARCHAR}, #{startdate,jdbcType=TIMESTAMP}, 
+      #{enddate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.huan.lottery.pojo.LtActivity" >
     insert into lt_activity
@@ -109,6 +113,12 @@
       <if test="activityname != null" >
         activityName,
       </if>
+      <if test="startdate != null" >
+        startDate,
+      </if>
+      <if test="enddate != null" >
+        endDate,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -116,6 +126,12 @@
       </if>
       <if test="activityname != null" >
         #{activityname,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null" >
+        #{startdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -134,6 +150,12 @@
       <if test="record.activityname != null" >
         activityName = #{record.activityname,jdbcType=VARCHAR},
       </if>
+      <if test="record.startdate != null" >
+        startDate = #{record.startdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.enddate != null" >
+        endDate = #{record.enddate,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -142,7 +164,9 @@
   <update id="updateByExample" parameterType="map" >
     update lt_activity
     set id = #{record.id,jdbcType=INTEGER},
-      activityName = #{record.activityname,jdbcType=VARCHAR}
+      activityName = #{record.activityname,jdbcType=VARCHAR},
+      startDate = #{record.startdate,jdbcType=TIMESTAMP},
+      endDate = #{record.enddate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -153,12 +177,20 @@
       <if test="activityname != null" >
         activityName = #{activityname,jdbcType=VARCHAR},
       </if>
+      <if test="startdate != null" >
+        startDate = #{startdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        endDate = #{enddate,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huan.lottery.pojo.LtActivity" >
     update lt_activity
-    set activityName = #{activityname,jdbcType=VARCHAR}
+    set activityName = #{activityname,jdbcType=VARCHAR},
+      startDate = #{startdate,jdbcType=TIMESTAMP},
+      endDate = #{enddate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

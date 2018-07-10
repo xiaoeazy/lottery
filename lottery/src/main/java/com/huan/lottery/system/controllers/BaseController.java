@@ -14,6 +14,7 @@ public class BaseController {
 	// 跳转
     protected static final String REDIRECT = "redirect:";
     public static final String FIELD_USER_ID = "userId";
+    public static final String SALES_PERSON_ID = "salesPersonId";
   
     protected static final String DEFAULT_VIEW_HOME = "";
 

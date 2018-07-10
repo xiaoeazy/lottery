@@ -332,6 +332,76 @@ public class LtUserExample {
             return (Criteria) this;
         }
 
+        public Criteria andSalespersonidIsNull() {
+            addCriterion("salesPersonId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidIsNotNull() {
+            addCriterion("salesPersonId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidEqualTo(String value) {
+            addCriterion("salesPersonId =", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidNotEqualTo(String value) {
+            addCriterion("salesPersonId <>", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidGreaterThan(String value) {
+            addCriterion("salesPersonId >", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidGreaterThanOrEqualTo(String value) {
+            addCriterion("salesPersonId >=", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidLessThan(String value) {
+            addCriterion("salesPersonId <", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidLessThanOrEqualTo(String value) {
+            addCriterion("salesPersonId <=", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidLike(String value) {
+            addCriterion("salesPersonId like", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidNotLike(String value) {
+            addCriterion("salesPersonId not like", value, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidIn(List<String> values) {
+            addCriterion("salesPersonId in", values, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidNotIn(List<String> values) {
+            addCriterion("salesPersonId not in", values, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidBetween(String value1, String value2) {
+            addCriterion("salesPersonId between", value1, value2, "salespersonid");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalespersonidNotBetween(String value1, String value2) {
+            addCriterion("salesPersonId not between", value1, value2, "salespersonid");
+            return (Criteria) this;
+        }
+
         public Criteria andPhoneIsNull() {
             addCriterion("phone is null");
             return (Criteria) this;
@@ -522,63 +592,63 @@ public class LtUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeIsNull() {
-            addCriterion("priceTime is null");
+        public Criteria andAwarddateIsNull() {
+            addCriterion("awardDate is null");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeIsNotNull() {
-            addCriterion("priceTime is not null");
+        public Criteria andAwarddateIsNotNull() {
+            addCriterion("awardDate is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeEqualTo(Date value) {
-            addCriterionForJDBCDate("priceTime =", value, "pricetime");
+        public Criteria andAwarddateEqualTo(Date value) {
+            addCriterionForJDBCDate("awardDate =", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("priceTime <>", value, "pricetime");
+        public Criteria andAwarddateNotEqualTo(Date value) {
+            addCriterionForJDBCDate("awardDate <>", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("priceTime >", value, "pricetime");
+        public Criteria andAwarddateGreaterThan(Date value) {
+            addCriterionForJDBCDate("awardDate >", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("priceTime >=", value, "pricetime");
+        public Criteria andAwarddateGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("awardDate >=", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeLessThan(Date value) {
-            addCriterionForJDBCDate("priceTime <", value, "pricetime");
+        public Criteria andAwarddateLessThan(Date value) {
+            addCriterionForJDBCDate("awardDate <", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("priceTime <=", value, "pricetime");
+        public Criteria andAwarddateLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("awardDate <=", value, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeIn(List<Date> values) {
-            addCriterionForJDBCDate("priceTime in", values, "pricetime");
+        public Criteria andAwarddateIn(List<Date> values) {
+            addCriterionForJDBCDate("awardDate in", values, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("priceTime not in", values, "pricetime");
+        public Criteria andAwarddateNotIn(List<Date> values) {
+            addCriterionForJDBCDate("awardDate not in", values, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("priceTime between", value1, value2, "pricetime");
+        public Criteria andAwarddateBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("awardDate between", value1, value2, "awarddate");
             return (Criteria) this;
         }
 
-        public Criteria andPricetimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("priceTime not between", value1, value2, "pricetime");
+        public Criteria andAwarddateNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("awardDate not between", value1, value2, "awarddate");
             return (Criteria) this;
         }
     }

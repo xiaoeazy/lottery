@@ -9,6 +9,8 @@ public class LtPrizeitem {
 
     private Integer remainnum;
 
+    private Integer probability;
+
     private Integer aid;
 
     public Integer getId() {
@@ -41,6 +43,14 @@ public class LtPrizeitem {
 
     public void setRemainnum(Integer remainnum) {
         this.remainnum = remainnum;
+    }
+
+    public Integer getProbability() {
+        return probability;
+    }
+
+    public void setProbability(Integer probability) {
+        this.probability = probability;
     }
 
     public Integer getAid() {

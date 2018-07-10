@@ -1,15 +1,21 @@
 package com.huan.lottery.service.impl;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.huan.lottery.mapper.LtActivityMapper;
+import com.huan.lottery.mapper.LtPrizeitemMapper;
 import com.huan.lottery.mapper.LtUserMapper;
+import com.huan.lottery.pojo.LtActivity;
+import com.huan.lottery.pojo.LtPrizeitem;
+import com.huan.lottery.pojo.LtPrizeitemExample;
 import com.huan.lottery.pojo.LtUser;
 import com.huan.lottery.pojo.LtUserExample;
 import com.huan.lottery.pojo.LtUserExample.Criteria;
@@ -22,6 +28,12 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private LtUserMapper ltUserMapper;
+	@Autowired
+	private LtPrizeitemMapper ltPrizeitemMapper;
+	@Autowired
+	private LtActivityMapper ltActivityMapper;
+	
+	public static  Object obj = new Object();
 	
 //	@Value("${SSO_SESSION_EXPIRE}")
 //	private Integer SSO_SESSION_EXPIRE;
@@ -62,6 +74,107 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@Override
+	public  TaotaoResult choujiang(Integer userid,String salesPersonId) throws Exception{
+		int resultNum = 0;
+		try {
+			synchronized(obj){
+				LtUser user = ltUserMapper.selectByPrimaryKey(userid);
+				if(user.getFlag()==true)
+					throw new Exception("对不起,您已经抽过奖品了!");
+				
+				Date nowDate = new Date();
+				LtActivity ltActivity = ltActivityMapper.selectByPrimaryKey(1);
+				judgeDate(nowDate, ltActivity);
+				
+				double random = randomNum();
+				LtPrizeitemExample example = new LtPrizeitemExample();
+				com.huan.lottery.pojo.LtPrizeitemExample.Criteria criteria = example.createCriteria();
+				criteria.andAidEqualTo(1);
+				List<LtPrizeitem> list = ltPrizeitemMapper.selectByExample(example);
+				if(list!=null && list.size()==0)
+					throw new Exception("对不起,尚未设置奖品!");
+				
+				LtPrizeitem lp = null;
+				for (LtPrizeitem award : list) {
+		            if(random < award.getProbability()){
+		            	if(award.getRemainnum()>0){ //以免奖项已经为0
+		            		lp= award;//获得的是哪个奖项
+		                	break;
+		            	}
+		            }
+		        }
+				
+				LtUser useritem = new LtUser();
+				useritem.setId(userid);
+				useritem.setFlag(true);
+				useritem.setAwarddate(nowDate);
+				useritem.setSalespersonid(salesPersonId);
+				if(lp!=null){
+					LtPrizeitem item = new LtPrizeitem();
+					item.setId(lp.getId());
+					item.setRemainnum(lp.getRemainnum()-1);
+					ltPrizeitemMapper.updateByPrimaryKeySelective(lp);
+					useritem.setPid(item.getId());   //更新奖品表中的数据
+					resultNum = item.getId();
+				}
+				ltUserMapper.updateByPrimaryKey(useritem);//更新用户获奖状态;
+			}
+		} catch (Exception e) {
+			 throw e;
+		}
+		return  TaotaoResult.ok(resultNum);
+	}
+	
+	@Override
+	public  TaotaoResult choujiangTest(Integer userid,String salesPersonId) throws Exception{
+		int resultNum = 0;
+		double random = randomNum();
+		LtPrizeitemExample example = new LtPrizeitemExample();
+		com.huan.lottery.pojo.LtPrizeitemExample.Criteria criteria = example.createCriteria();
+		criteria.andAidEqualTo(1);
+		List<LtPrizeitem> list = ltPrizeitemMapper.selectByExample(example);
+		if(list!=null && list.size()==0)
+			throw new Exception("对不起,尚未设置奖品!");
+		
+		LtPrizeitem lp = null;
+		for (LtPrizeitem award : list) {
+            if(random < award.getProbability()){
+            	if(award.getRemainnum()>0){ //以免奖项已经为0
+            		lp= award;//获得的是哪个奖项
+                	break;
+            	}
+            }
+        }
+		if(lp!=null){
+			resultNum=lp.getId();
+		}
+		return TaotaoResult.ok(resultNum);
+	}
+	
+	private void judgeDate(Date nowDate,LtActivity ltActivity ) throws Exception{
+	
+		Date startDate = ltActivity.getStartdate();
+		Date endDate = ltActivity.getEnddate();
+		if(startDate!=null){
+			if(nowDate.getTime()<startDate.getTime()){
+				throw new Exception("活动尚未开启!");
+			}
+		}
+		if(endDate!=null){
+			if(endDate.getTime()<nowDate.getTime()){
+				throw new Exception("活动已经结束!");
+			}
+		}
+	}
+	
+	private double randomNum(){
+		 	Random randomTool = new Random();
+	        Double userSelect = randomTool.nextDouble()*100;
+	        return userSelect;
+	}
+	
+	
 	
 
 }

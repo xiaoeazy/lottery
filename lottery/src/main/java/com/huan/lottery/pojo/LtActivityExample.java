@@ -1,6 +1,7 @@
 package com.huan.lottery.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class LtActivityExample {
@@ -231,6 +232,126 @@ public class LtActivityExample {
 
         public Criteria andActivitynameNotBetween(String value1, String value2) {
             addCriterion("activityName not between", value1, value2, "activityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateIsNull() {
+            addCriterion("startDate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateIsNotNull() {
+            addCriterion("startDate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateEqualTo(Date value) {
+            addCriterion("startDate =", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateNotEqualTo(Date value) {
+            addCriterion("startDate <>", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateGreaterThan(Date value) {
+            addCriterion("startDate >", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateGreaterThanOrEqualTo(Date value) {
+            addCriterion("startDate >=", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateLessThan(Date value) {
+            addCriterion("startDate <", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateLessThanOrEqualTo(Date value) {
+            addCriterion("startDate <=", value, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateIn(List<Date> values) {
+            addCriterion("startDate in", values, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateNotIn(List<Date> values) {
+            addCriterion("startDate not in", values, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateBetween(Date value1, Date value2) {
+            addCriterion("startDate between", value1, value2, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartdateNotBetween(Date value1, Date value2) {
+            addCriterion("startDate not between", value1, value2, "startdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateIsNull() {
+            addCriterion("endDate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateIsNotNull() {
+            addCriterion("endDate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateEqualTo(Date value) {
+            addCriterion("endDate =", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateNotEqualTo(Date value) {
+            addCriterion("endDate <>", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateGreaterThan(Date value) {
+            addCriterion("endDate >", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateGreaterThanOrEqualTo(Date value) {
+            addCriterion("endDate >=", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateLessThan(Date value) {
+            addCriterion("endDate <", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateLessThanOrEqualTo(Date value) {
+            addCriterion("endDate <=", value, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateIn(List<Date> values) {
+            addCriterion("endDate in", values, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateNotIn(List<Date> values) {
+            addCriterion("endDate not in", values, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateBetween(Date value1, Date value2) {
+            addCriterion("endDate between", value1, value2, "enddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddateNotBetween(Date value1, Date value2) {
+            addCriterion("endDate not between", value1, value2, "enddate");
             return (Criteria) this;
         }
     }

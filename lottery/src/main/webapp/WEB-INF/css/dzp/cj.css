@@ -17,7 +17,7 @@ table{border-collapse:collapse;border-spacing:0}
 p{word-wrap:break-word}
 /*bg*/
 body{
-	background-image:url(../images/bg.png);
+	background-image:url(../../images/dzp/bg.png);
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -29,7 +29,7 @@ body{
 .rotate-bg{
 	width:560px;
 	height:560px;
-	background:url(../images/rotate-bg.png);
+	background:url(../../images/dzp/rotate-bg.png);
 	position:relative;
 	margin-top:200px
 }
@@ -96,12 +96,12 @@ body{
 	right: 10px;
 	width: 26px;
 	height: 26px;
-	background: url(../images/close.png) no-repeat center;
+	background: url(../../images/dzp/close.png) no-repeat center;
 }
 .winning dt,.reminderwin dt{
 	width: 100%;
 	height:300px;
-	background: url(../images/happy.png) no-repeat center;
+	background: url(../../images/dzp/happy.png) no-repeat center;
 }
 .winning dd, .reminderwin dd{
 	width: 100%;
@@ -150,7 +150,7 @@ body{
 .loser dt,.reminder dt{
 	width: 100%;
 	height:230px;
-	background: url(../images/cry.png) no-repeat center;
+	background: url(../../images/dzp/cry.png) no-repeat center;
 }
 .loser dd,.reminder dd{
 	width: 100%;
