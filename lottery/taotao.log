@@ -1,0 +1,34 @@
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Finished creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'ltActivityMapper'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'ltPrizeitemMapper'
+2018-07-11 00:49:33,903 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'ltUserMapper'
+2018-07-11 00:49:33,906 [main] [org.springframework.context.support.ClassPathXmlApplicationContext]-[DEBUG] Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@6ca0256d]
+2018-07-11 00:49:33,906 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'lifecycleProcessor'
+2018-07-11 00:49:33,908 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'sqlSessionFactory'
+2018-07-11 00:49:33,909 [main] [org.springframework.core.env.PropertySourcesPropertyResolver]-[DEBUG] Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+2018-07-11 00:49:33,910 [main] [org.springframework.core.env.PropertySourcesPropertyResolver]-[DEBUG] Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+2018-07-11 00:49:33,910 [main] [org.springframework.core.env.PropertySourcesPropertyResolver]-[DEBUG] Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+2018-07-11 00:49:33,910 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'excelService'
+2018-07-11 00:49:33,917 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+2018-07-11 00:49:33,922 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'transactionManager'
+2018-07-11 00:49:33,927 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Creating new transaction with name [com.huan.lottery.service.impl.UserServiceImpl.loadAllUser]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; '',-java.lang.Exception
+2018-07-11 00:49:34,035 [main] [com.alibaba.druid.pool.DruidDataSource]-[INFO] {dataSource-1} inited
+2018-07-11 00:49:34,261 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Acquired Connection [com.mysql.jdbc.JDBC4Connection@46c670a6] for JDBC transaction
+2018-07-11 00:49:34,266 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Switching JDBC Connection [com.mysql.jdbc.JDBC4Connection@46c670a6] to manual commit
+2018-07-11 00:49:34,269 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Creating a new SqlSession
+2018-07-11 00:49:34,280 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69f63d95]
+2018-07-11 00:49:34,312 [main] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.jdbc.JDBC4Connection@46c670a6] will be managed by Spring
+2018-07-11 00:49:34,316 [main] [com.huan.lottery.mapper.LtUserMapper.selectByExample]-[DEBUG] ==>  Preparing: select id, username, idcard, salesPersonId, phone, flag, pid, awardDate from lt_user 
+2018-07-11 00:49:34,335 [main] [com.huan.lottery.mapper.LtUserMapper.selectByExample]-[DEBUG] ==> Parameters: 
+2018-07-11 00:49:34,689 [main] [com.huan.lottery.mapper.LtUserMapper.selectByExample]-[DEBUG] <==      Total: 25237
+2018-07-11 00:49:34,690 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69f63d95]
+2018-07-11 00:49:34,691 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69f63d95]
+2018-07-11 00:49:34,691 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69f63d95]
+2018-07-11 00:49:34,691 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69f63d95]
+2018-07-11 00:49:34,691 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Initiating transaction commit
+2018-07-11 00:49:34,691 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Committing JDBC transaction on Connection [com.mysql.jdbc.JDBC4Connection@46c670a6]
+2018-07-11 00:49:34,692 [main] [org.springframework.jdbc.datasource.DataSourceTransactionManager]-[DEBUG] Releasing JDBC Connection [com.mysql.jdbc.JDBC4Connection@46c670a6] after transaction
+2018-07-11 00:49:34,692 [main] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Returning JDBC Connection to DataSource

@@ -364,52 +364,52 @@ public class LtPrizeitemExample {
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityEqualTo(Integer value) {
+        public Criteria andProbabilityEqualTo(Long value) {
             addCriterion("probability =", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityNotEqualTo(Integer value) {
+        public Criteria andProbabilityNotEqualTo(Long value) {
             addCriterion("probability <>", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityGreaterThan(Integer value) {
+        public Criteria andProbabilityGreaterThan(Long value) {
             addCriterion("probability >", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityGreaterThanOrEqualTo(Integer value) {
+        public Criteria andProbabilityGreaterThanOrEqualTo(Long value) {
             addCriterion("probability >=", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityLessThan(Integer value) {
+        public Criteria andProbabilityLessThan(Long value) {
             addCriterion("probability <", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityLessThanOrEqualTo(Integer value) {
+        public Criteria andProbabilityLessThanOrEqualTo(Long value) {
             addCriterion("probability <=", value, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityIn(List<Integer> values) {
+        public Criteria andProbabilityIn(List<Long> values) {
             addCriterion("probability in", values, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityNotIn(List<Integer> values) {
+        public Criteria andProbabilityNotIn(List<Long> values) {
             addCriterion("probability not in", values, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityBetween(Integer value1, Integer value2) {
+        public Criteria andProbabilityBetween(Long value1, Long value2) {
             addCriterion("probability between", value1, value2, "probability");
             return (Criteria) this;
         }
 
-        public Criteria andProbabilityNotBetween(Integer value1, Integer value2) {
+        public Criteria andProbabilityNotBetween(Long value1, Long value2) {
             addCriterion("probability not between", value1, value2, "probability");
             return (Criteria) this;
         }

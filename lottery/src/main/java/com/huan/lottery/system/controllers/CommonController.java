@@ -16,46 +16,46 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class CommonController {
 
-    private Logger logger = LoggerFactory.getLogger(CommonController.class);
-
-    protected static final String DEFAULT_VIEW_HOME = "";
-    
-    @RequestMapping(value = "/{folder1}/{name}.jsp")
-    public ModelAndView renderFolder1View(@PathVariable String folder1, @PathVariable String name, Model model) {
-        return new ModelAndView(
-                new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(name).toString());
-    }
-
-    @RequestMapping(value = "/{folder1}/{folder2}/{name}.jsp")
-    public ModelAndView renderFolder2View(@PathVariable String folder1, @PathVariable String folder2,
-            @PathVariable String name, Model model) {
-        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
-                .append("/").append(name).toString());
-    }
-
-    @RequestMapping(value = "/{folder1}/{folder2}/{folder3}/{name}.jsp")
-    public ModelAndView renderFolder3View(@PathVariable String folder1, @PathVariable String folder2,
-            @PathVariable String folder3, @PathVariable String name, Model model) {
-        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
-                .append("/").append(folder3).append("/").append(name).toString());
-    }
-
-    @RequestMapping(value = "/{folder1}/{folder2}/{folder3}/{folder4}/{name}.jsp")
-    public ModelAndView renderFolder4View(@PathVariable String folder1, @PathVariable String folder2,
-            @PathVariable String folder3, @PathVariable String folder4, @PathVariable String name, Model model) {
-        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
-                .append("/").append(folder3).append("/").append(folder4).append("/").append(name).toString());
-    }
-
-    @RequestMapping(value = "/{name}.jsp")
-    public ModelAndView renderView(@PathVariable String name, Model model) {
-        return new ModelAndView(name);
-    }
-
-    
-    protected String getViewPath() {
-        return DEFAULT_VIEW_HOME;
-    }
-   
+//    private Logger logger = LoggerFactory.getLogger(CommonController.class);
+//
+//    protected static final String DEFAULT_VIEW_HOME = "";
+//    
+//    @RequestMapping(value = "/{folder1}/{name}.jsp")
+//    public ModelAndView renderFolder1View(@PathVariable String folder1, @PathVariable String name, Model model) {
+//        return new ModelAndView(
+//                new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(name).toString());
+//    }
+//
+//    @RequestMapping(value = "/{folder1}/{folder2}/{name}.jsp")
+//    public ModelAndView renderFolder2View(@PathVariable String folder1, @PathVariable String folder2,
+//            @PathVariable String name, Model model) {
+//        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
+//                .append("/").append(name).toString());
+//    }
+//
+//    @RequestMapping(value = "/{folder1}/{folder2}/{folder3}/{name}.jsp")
+//    public ModelAndView renderFolder3View(@PathVariable String folder1, @PathVariable String folder2,
+//            @PathVariable String folder3, @PathVariable String name, Model model) {
+//        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
+//                .append("/").append(folder3).append("/").append(name).toString());
+//    }
+//
+//    @RequestMapping(value = "/{folder1}/{folder2}/{folder3}/{folder4}/{name}.jsp")
+//    public ModelAndView renderFolder4View(@PathVariable String folder1, @PathVariable String folder2,
+//            @PathVariable String folder3, @PathVariable String folder4, @PathVariable String name, Model model) {
+//        return new ModelAndView(new StringBuilder(getViewPath()).append("/").append(folder1).append("/").append(folder2)
+//                .append("/").append(folder3).append("/").append(folder4).append("/").append(name).toString());
+//    }
+//
+//    @RequestMapping(value = "/{name}.jsp")
+//    public ModelAndView renderView(@PathVariable String name, Model model) {
+//        return new ModelAndView(name);
+//    }
+//
+//    
+//    protected String getViewPath() {
+//        return DEFAULT_VIEW_HOME;
+//    }
+//   
     
 }

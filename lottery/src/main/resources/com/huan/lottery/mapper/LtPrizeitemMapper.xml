@@ -6,7 +6,7 @@
     <result column="prizeName" property="prizename" jdbcType="VARCHAR" />
     <result column="num" property="num" jdbcType="INTEGER" />
     <result column="remainNum" property="remainnum" jdbcType="INTEGER" />
-    <result column="probability" property="probability" jdbcType="INTEGER" />
+    <result column="probability" property="probability" jdbcType="DECIMAL" />
     <result column="aid" property="aid" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -105,7 +105,7 @@
       remainNum, probability, aid
       )
     values (#{id,jdbcType=INTEGER}, #{prizename,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, 
-      #{remainnum,jdbcType=INTEGER}, #{probability,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}
+      #{remainnum,jdbcType=INTEGER}, #{probability,jdbcType=DECIMAL}, #{aid,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.huan.lottery.pojo.LtPrizeitem" >
@@ -144,7 +144,7 @@
         #{remainnum,jdbcType=INTEGER},
       </if>
       <if test="probability != null" >
-        #{probability,jdbcType=INTEGER},
+        #{probability,jdbcType=DECIMAL},
       </if>
       <if test="aid != null" >
         #{aid,jdbcType=INTEGER},
@@ -173,7 +173,7 @@
         remainNum = #{record.remainnum,jdbcType=INTEGER},
       </if>
       <if test="record.probability != null" >
-        probability = #{record.probability,jdbcType=INTEGER},
+        probability = #{record.probability,jdbcType=DECIMAL},
       </if>
       <if test="record.aid != null" >
         aid = #{record.aid,jdbcType=INTEGER},
@@ -189,7 +189,7 @@
       prizeName = #{record.prizename,jdbcType=VARCHAR},
       num = #{record.num,jdbcType=INTEGER},
       remainNum = #{record.remainnum,jdbcType=INTEGER},
-      probability = #{record.probability,jdbcType=INTEGER},
+      probability = #{record.probability,jdbcType=DECIMAL},
       aid = #{record.aid,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -208,7 +208,7 @@
         remainNum = #{remainnum,jdbcType=INTEGER},
       </if>
       <if test="probability != null" >
-        probability = #{probability,jdbcType=INTEGER},
+        probability = #{probability,jdbcType=DECIMAL},
       </if>
       <if test="aid != null" >
         aid = #{aid,jdbcType=INTEGER},
@@ -221,7 +221,7 @@
     set prizeName = #{prizename,jdbcType=VARCHAR},
       num = #{num,jdbcType=INTEGER},
       remainNum = #{remainnum,jdbcType=INTEGER},
-      probability = #{probability,jdbcType=INTEGER},
+      probability = #{probability,jdbcType=DECIMAL},
       aid = #{aid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

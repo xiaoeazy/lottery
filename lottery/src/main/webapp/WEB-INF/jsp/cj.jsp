@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html>
 <head>
@@ -21,9 +21,12 @@
 	<div class="h_text">
 		<ul>
 			<p>活动规则:</p>
-			<li>1. 转盘每日9点30分开始，24点结束。</li>
-			<li>2. 没个用户只可抽奖1次！</li>
-			<li>3. 抽中奖的客户，根据提示信息领取相对应的奖品。</li>
+			<li>1. 没个用户只可抽奖1次！</li>
+			<li>2. 抽中奖的客户，根据提示信息领取相对应的奖品。</li>
+			<c:if test="${!empty  startdate }">
+			  <li>3. 转盘${startdate}开始，${enddate}结束。</li>
+			</c:if>
+			
 			<li id="priceNum"></li>
 		</ul>
 	</div>

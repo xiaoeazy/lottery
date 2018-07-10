@@ -15,6 +15,7 @@ public class BaseController {
     protected static final String REDIRECT = "redirect:";
     public static final String FIELD_USER_ID = "userId";
     public static final String SALES_PERSON_ID = "salesPersonId";
+    public static final String PHONE = "phone";
   
     protected static final String DEFAULT_VIEW_HOME = "";
 

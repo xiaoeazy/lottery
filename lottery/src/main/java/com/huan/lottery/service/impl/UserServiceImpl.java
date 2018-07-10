@@ -7,8 +7,10 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.huan.lottery.mapper.LtActivityMapper;
 import com.huan.lottery.mapper.LtPrizeitemMapper;
@@ -23,7 +25,8 @@ import com.huan.lottery.pojo.TaotaoResult;
 import com.huan.lottery.service.UserService;
 
 
-@Service
+@Service("excelService")
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
 
 	@Autowired
@@ -37,8 +40,15 @@ public class UserServiceImpl implements UserService {
 	
 //	@Value("${SSO_SESSION_EXPIRE}")
 //	private Integer SSO_SESSION_EXPIRE;
+	@Override
+	public LtActivity loadActivity(Integer id ) {
+		return ltActivityMapper.selectByPrimaryKey(id);
+	}
 	
-
+	public List<LtUser> loadAllUser(){
+		return ltUserMapper.selectByExample(null);
+	}
+	
 	/**
 	 * 用户登录
 	 * <p>Title: userLogin</p>
@@ -63,11 +73,16 @@ public class UserServiceImpl implements UserService {
 		LtUser user = list.get(0);
 		//比对用户名
 		if (!user.getUsername().equals(username)) {
-			throw new Exception("投保人证件号与用户名不匹配!");
+			throw new Exception("用户名不匹配!");
 		}
 		
 		if (user.getFlag()==true) {
-			throw new Exception("对不起，您已经参加过抽奖!");
+			
+			LtPrizeitem it = ltPrizeitemMapper.selectByPrimaryKey(user.getPid());
+			String addString = "";
+			if(it!=null)
+				addString+="奖品为:"+it.getPrizename();
+			throw new Exception("对不起，您已经参加过抽奖! "+addString);
 		}
 		
 		//返回token
@@ -75,13 +90,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public  TaotaoResult choujiang(Integer userid,String salesPersonId) throws Exception{
+	public  TaotaoResult choujiang(Integer userid,String salesPersonId,String phone) throws Exception{
 		int resultNum = 0;
 		try {
 			synchronized(obj){
 				LtUser user = ltUserMapper.selectByPrimaryKey(userid);
-				if(user.getFlag()==true)
-					throw new Exception("对不起,您已经抽过奖品了!");
+				if(user.getFlag()==true) {
+					LtPrizeitem it = ltPrizeitemMapper.selectByPrimaryKey(user.getPid());
+					String addString = "";
+					if(it!=null)
+						addString+="奖品为:"+it.getPrizename();
+					throw new Exception("对不起，您已经参加过抽奖! "+addString);
+				}
 				
 				Date nowDate = new Date();
 				LtActivity ltActivity = ltActivityMapper.selectByPrimaryKey(1);
@@ -110,15 +130,16 @@ public class UserServiceImpl implements UserService {
 				useritem.setFlag(true);
 				useritem.setAwarddate(nowDate);
 				useritem.setSalespersonid(salesPersonId);
+				useritem.setPhone(phone);
 				if(lp!=null){
 					LtPrizeitem item = new LtPrizeitem();
 					item.setId(lp.getId());
 					item.setRemainnum(lp.getRemainnum()-1);
-					ltPrizeitemMapper.updateByPrimaryKeySelective(lp);
+					ltPrizeitemMapper.updateByPrimaryKeySelective(item);
 					useritem.setPid(item.getId());   //更新奖品表中的数据
 					resultNum = item.getId();
 				}
-				ltUserMapper.updateByPrimaryKey(useritem);//更新用户获奖状态;
+				ltUserMapper.updateByPrimaryKeySelective(useritem);//更新用户获奖状态;
 			}
 		} catch (Exception e) {
 			 throw e;
@@ -127,7 +148,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public  TaotaoResult choujiangTest(Integer userid,String salesPersonId) throws Exception{
+	public  TaotaoResult choujiangTest(Integer userid) throws Exception{
 		int resultNum = 0;
 		double random = randomNum();
 		LtPrizeitemExample example = new LtPrizeitemExample();
@@ -172,6 +193,14 @@ public class UserServiceImpl implements UserService {
 		 	Random randomTool = new Random();
 	        Double userSelect = randomTool.nextDouble()*100;
 	        return userSelect;
+	}
+	@Test
+	public void main() {
+		for(int i=0;i<10000;i++) {
+			double a = randomNum();
+			if(a<1)
+				System.out.println(a);
+		}
 	}
 	
 	

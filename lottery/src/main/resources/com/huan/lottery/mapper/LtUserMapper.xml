@@ -9,7 +9,7 @@
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="BIT" />
     <result column="pid" property="pid" jdbcType="INTEGER" />
-    <result column="awardDate" property="awarddate" jdbcType="DATE" />
+    <result column="awardDate" property="awarddate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -108,7 +108,7 @@
       pid, awardDate)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
       #{salespersonid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{flag,jdbcType=BIT}, 
-      #{pid,jdbcType=INTEGER}, #{awarddate,jdbcType=DATE})
+      #{pid,jdbcType=INTEGER}, #{awarddate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.huan.lottery.pojo.LtUser" >
     insert into lt_user
@@ -161,7 +161,7 @@
         #{pid,jdbcType=INTEGER},
       </if>
       <if test="awarddate != null" >
-        #{awarddate,jdbcType=DATE},
+        #{awarddate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -196,7 +196,7 @@
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
       <if test="record.awarddate != null" >
-        awardDate = #{record.awarddate,jdbcType=DATE},
+        awardDate = #{record.awarddate,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -212,7 +212,7 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       flag = #{record.flag,jdbcType=BIT},
       pid = #{record.pid,jdbcType=INTEGER},
-      awardDate = #{record.awarddate,jdbcType=DATE}
+      awardDate = #{record.awarddate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -239,7 +239,7 @@
         pid = #{pid,jdbcType=INTEGER},
       </if>
       <if test="awarddate != null" >
-        awardDate = #{awarddate,jdbcType=DATE},
+        awardDate = #{awarddate,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -252,7 +252,7 @@
       phone = #{phone,jdbcType=VARCHAR},
       flag = #{flag,jdbcType=BIT},
       pid = #{pid,jdbcType=INTEGER},
-      awardDate = #{awarddate,jdbcType=DATE}
+      awardDate = #{awarddate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

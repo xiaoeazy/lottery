@@ -9,7 +9,7 @@ public class LtPrizeitem {
 
     private Integer remainnum;
 
-    private Integer probability;
+    private Long probability;
 
     private Integer aid;
 
@@ -45,11 +45,11 @@ public class LtPrizeitem {
         this.remainnum = remainnum;
     }
 
-    public Integer getProbability() {
+    public Long getProbability() {
         return probability;
     }
 
-    public void setProbability(Integer probability) {
+    public void setProbability(Long probability) {
         this.probability = probability;
     }
 
